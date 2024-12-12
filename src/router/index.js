@@ -10,6 +10,14 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      path: '/wait',
+      name: 'wait',
+      // route level code-splitting
+      // this generates a separate chunk (Card.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/WaitView.vue'),
+    },    
+    {
       path: '/card',
       name: 'card',
       // route level code-splitting
