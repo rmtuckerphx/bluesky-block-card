@@ -24,7 +24,7 @@ console.log('go props', props)
 <template>
   <div class="view-container">
     <div class="view-form">
-      <h2>{{ displayName }}</h2>
+      <div class="display-name">{{ displayName }}</div>
 
       <svg id="svg5" width="400px" height="300px" version="1.1" viewBox="0 0 480 340" xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg">
@@ -64,32 +64,16 @@ console.log('go props', props)
         </g>
       </svg>
 
-      <button class="btn" @click="goToJail">Visit the Fool</button>
+      <button class="btn" @click="goToJail">Next</button>
     </div>
   </div>
 </template>
 
-<!-- <template>
-
-  
-  <div class="about">
-    <h1>{{ displayName }}</h1>
-    <svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" stroke="black" fill="transparent"/>
-        <text id="myText" x="50" y="150" font-size="24" fill="blue">{{ displayName }}</text>
-    </svg>
-    <button @click="goToJail">Just Visiting</button>
-  </div>
-</template> -->
-
-
-
-<!-- <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+<style>
+.display-name {
+  font-size: 2.0rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
 }
-</style> -->
+</style>

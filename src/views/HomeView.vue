@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import eventBus from '@/eventBus';
 
-const handle = ref('marktucker.bsky.social');
+const handle = ref('myname.bsky.social');
 
 const connect = () => {
   eventBus.emit('connectEvent', { handle: handle.value });
@@ -10,7 +10,6 @@ const connect = () => {
 </script>
 
 <template>
-  <!-- <div class="view"> -->
     <div class="view-container">
       <div class="view-form">
         <h2>For Those About To Block</h2>
@@ -22,7 +21,6 @@ const connect = () => {
         <button class="btn" @click="connect">Connect</button>
       </div>
     </div>
-  <!-- </div> -->
 </template>
 
 <style scoped>

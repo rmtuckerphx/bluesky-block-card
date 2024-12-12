@@ -81,7 +81,10 @@ eventBus.on('connectEvent', async (payload) => {
 eventBus.on('disconnectEvent', (payload) => {
   console.log('disconnectEvent:', payload);
 
-  socket.close(1000, 'Closing socket')
+  if (socket) {
+    socket.close(1000, 'Closing socket')
+  }
+  
   router.push({ path: '/' });
 });
 
