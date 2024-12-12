@@ -47,6 +47,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .btn:hover {

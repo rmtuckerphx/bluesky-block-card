@@ -4,12 +4,12 @@ import { useRoute, useRouter } from "vue-router";
 const route = useRoute();
 const router = useRouter();
 
-const handle = route.query.handle;
-const displayName = route.query.displayName;
-const avatar = route.query.avatar;
+const handle = route.query.handle || "";
+const displayName = route.query.displayName || "";
+const avatar = route.query.avatar || "";
 
 const disconnect = () => {
-  eventBus.emit('disconnectEvent', null );
+  eventBus.emit('disconnectEvent', null);
 }
 
 const wait = () => {
@@ -20,27 +20,45 @@ const wait = () => {
 <template>
   <div class="view-container">
     <div class="view-form">
-      <h2>{{ displayName }}</h2>
+      <div class="profile-picture">
+        <img :src="avatar" alt="Blocked avatar">
+      </div>
+      <div class="displayName">{{ displayName }}</div>
+      <div class="handle">{{ handle }}</div>
       <button class="btn" @click="wait">Continue</button>
       <button class="btn" @click="disconnect">Disconnect</button>
     </div>
   </div>
 </template>
-<!-- 
-<template>
-  <div class="about">
-    <h1>This is an Jail page</h1>
-    <button @click="disconnect">Disconnect</button>
 
-  </div>
-</template> -->
-
-<!-- <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+<style>
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #262626;
+  margin-bottom: 10px;
+  align-content: center;
 }
-</style> -->
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.display-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.handle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+</style>
